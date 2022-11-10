@@ -1,4 +1,4 @@
-import {storage} from "near-sdk-as";
+import {storage, Context} from "near-sdk-as";
 
 class Greeting {
 
@@ -8,6 +8,6 @@ class Greeting {
     }
 
     setGreeting(greeting: string) {
-        storage.set(accountId, greeting);
+        storage.set(Context.sender, greeting);
     }
 }
